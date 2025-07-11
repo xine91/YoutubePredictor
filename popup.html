@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Manrope' rel='stylesheet'>
+  <title>What does your YouTube say about you?</title>
+  <style>
+    body {
+      width: 500px;
+      font-family: 'Manrope';
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    input:focus {
+      outline: none;
+      border-color: #4a90e2;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 20px 0;
+    }
+    button {
+      width: 200px;
+      border-radius: 16px;
+      padding: 8px;
+      background-color: #bc3a3a;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    button:hover {
+      background-color: #cc0000;
+    }
+    .title-list {
+      max-height: 300px;
+      overflow-y: auto;
+      width: 100%;
+    }
+    .title-item {
+      padding: 6px;
+      border-bottom: 1px solid #eee;
+      font-size: 11px;
+    }
+    #result {
+      font-size: 11px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <form id="inputForm">
+    <div class="form-group">
+      <label for="roleS">Role of System</label>
+      <input type="text" id="roleS" name="roleS" placeholder="Enter a role of system you want" required>
+    </div>
+    <div class="form-group">
+      <label for="conS">Content For System</label>
+      <input type="text" id="conS" name="conS" placeholder="Enter a content for system you want" required>
+    </div>
+    <div class="form-group">
+      <label for="roleU">Role of User</label>
+      <input type="text" id="roleU" name="roleU" placeholder="Enter a role of user you want" required>
+    </div>
+    <div class="form-group">
+      <label for="conU">Content For User</label>
+      <input type="text" id="conU" name="conU" placeholder="Enter a content for user you want" required>
+    </div>
+  </form>
+  <div class="button-container">
+    <button id="extractTitles">Tell me!</button>
+  </div>
+  <div id="titleList" class="title-list"></div>
+  <div id="result"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

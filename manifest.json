@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Title Extractor",
+  "version": "1.0",
+  "description": "Extracts titles from YouTube For You page",
+  "icons": {
+    "16": "image.png",
+    "32": "image.png",
+    "48": "image.png",
+    "128": "image.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "image.png",
+      "32": "image.png",
+      "48": "image.png",
+      "128": "image.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ]
+}
